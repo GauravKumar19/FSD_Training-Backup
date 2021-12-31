@@ -1,0 +1,37 @@
+{
+    "book": [
+        {
+            "id": "01",
+            "language": "Java",
+            "edition": "third",
+            "author": "Herbert Schildt",
+            "authoradd": {
+                "street": "Plot No.6, Indiranagar",
+                "city": "Bangalore",
+                "state": "Karnataka",
+                "pincode": "560012"
+            },
+            "volume": [
+                "I",
+                "II"
+            ]
+        },
+        {
+            "id": "07",
+            "language": "C++",
+            "edition": "second",
+            "author": "E.Balagurusamy",
+            "authoradd": {
+                "street": "Avenue Lane, Mohan nagar",
+                "city": "Noida",
+                "state": "UP",
+                "pincode": "8887789"
+            },
+            "volume": [
+                "I",
+                "II",
+                "III"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Data from External File using Ajax in jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+
+        $(document).ready(function(){
+        
+            $("button").click(function(){
+        
+                $("#box").load("content.html"); // Load() method injects data into the dom
+        
+            });
+        
+        });
+        
+        </script>
+</head>
+<body>
+    <h1>Ajax Load() method demo</h1>
+    <div id="box">
+
+        <h2>Click button to load new content inside DIV box</h2>
+
+    </div>
+
+    <button type="button">Load Content</button>
+</body>
+</html>

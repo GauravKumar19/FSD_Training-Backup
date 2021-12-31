@@ -1,0 +1,9 @@
+{
+    "employee": {
+        "empid": 101,
+        "name": "Gaurav",
+        "desig": "Developer",
+        "married": "false",
+        "salary": 50.50
+    }
+}

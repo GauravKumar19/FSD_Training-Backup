@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuous Clock</title>
+
+    
+   
+</head>
+<body>
+    
+    <script>
+       window.setInterval(CurrentLocalTime,1000);
+        //CurrentLocalTime();
+        function CurrentLocalTime() {
+
+var dte = new Date();
+
+var tme = dte.toLocaleTimeString("en-US",opt);
+
+document.writeln("<br>"+tme);
+
+}
+
+const opt = {
+    timezone :"Asia/Kolkata",
+    hour12: false,
+    hour:"2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+}
+    </script>
+
+</body>
+</html>

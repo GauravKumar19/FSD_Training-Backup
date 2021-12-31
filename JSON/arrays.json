@@ -1,0 +1,16 @@
+{
+
+    "employee":
+
+            {
+                        "empid": 101,
+                        "name": "Gaurav",
+                        "desig": "Developer",
+                        "married": "false",
+                        "salary": 50.50,
+                        "technologies":["Spring","Hibernate","Python"],
+                        "performancefiveyears":[8,9,9.5,8.5,9],
+                        "comments":"Using Arrays in JSON"
+                
+            }
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question1 </title>
+
+    <style>
+        .myClass {
+
+            padding: 20px;
+
+            font: 20px sans-serif;
+            background-color: khaki;
+            border-radius: 25px;
+        }
+
+        div {
+            height: auto;
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid #033371;
+            border-radius: 15px;
+            -moz-border-radius: 15px;
+            -webkit-border-radius: 15px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+
+
+        $(document).ready(function(){ 
+        $("#exp").prop("disabled",true); 
+            $("#panel").hide();
+            });
+
+            //Question1
+            $(document).ready(function () {
+
+            $("#ans").click(function () {
+
+                $(".test1").hide();
+                $("#exp").prop("disabled",false);
+
+            });
+
+
+            $("#ans").click(function () {
+
+                $(".green1").css("background-color", "limegreen", "width", "10px");
+            });
+
+            
+            $("#reset").click(function () {
+                $(".test1").show();
+                $(".green1").css("background-color", "white");
+                 $("#panel").hide();
+                $("#exp").prop("disabled",true); 
+               
+                
+            });
+
+        });
+
+        $(document).ready(function(){
+        
+        $("#exp").click(function(){
+      
+          $("#panel").slideToggle("slow");
+      
+        });
+      
+      });
+
+
+        //Question2
+        $(document).ready(function () {
+
+            $("#ans1").click(function () {
+
+                $(".test2").hide();
+
+            });
+
+
+            $("#ans1").click(function () {
+
+                $(".green2").css("background-color", "limegreen", "width", "10px");
+            });
+
+            $("#reset2").click(function () {
+                $(".test2").show();
+                $(".green2").css("background-color", "white");
+            });
+
+
+        });
+
+
+        //Question3
+        $(document).ready(function () {
+
+            $("#ans2").click(function () {
+
+                $(".test3").hide();
+
+            });
+
+
+            $("#ans2").click(function () {
+
+                $(".green3").css("background-color", "limegreen", "width", "10px");
+            });
+
+            $("#reset3").click(function () {
+                $(".test3").show();
+                $(".green3").css("background-color", "white");
+            });
+
+
+        });
+
+
+        //question4
+        $(document).ready(function () {
+
+            $("#ans3").click(function () {
+
+                $(".test4").hide();
+
+            });
+
+
+            $("#ans3").click(function () {
+
+                $(".green4").css("background-color", "limegreen", "width", "10px");
+            });
+
+            $("#reset4").click(function () {
+                $(".test4").show();
+                $(".green4").css("background-color", "white");
+            });
+
+
+        });
+
+        //Question5
+        $(document).ready(function () {
+
+            $("#ans4").click(function () {
+
+                $(".test5").hide();
+
+            });
+
+
+            $("#ans4").click(function () {
+
+                $(".green5").css("background-color", "limegreen");
+            });
+
+            $("#reset5").click(function () {
+                $(".test5").show();
+                $(".green5").css("background-color", "white");
+            });
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <h1>Q1. Write a code to make a quiz with 5 Questions with appropriate UI that will hide the wrong answers and only
+        display the correct answer</h1>
+
+    <div>
+        <h2>
+            <p class="myClass">Q1. What is the value of "d" after this line of code has been executed?<br><br>
+
+                double d = Math.round ( 2.5 + Math.random() );</p>
+        </h2>
+
+
+        <p class="test1">A. 2</p>
+        <p class="green1">B. 3</p>
+        <p class="test1">C. 4</p>
+        <p class="test1">D. 2.5</p>
+
+        <button id="ans">Show Answer</button>
+        <button id="reset">Reset</button>
+
+        <button id="exp" style="float: right;">Explanation</button>
+    
+
+        <div id="panel">The Math.random() method returns a number greater than or equal to 0 and less than 1 . 
+            Since we can then be sure that the sum of that number and 2.5 will be greater than or equal to 2.5
+             and less than 3.5, we can be sure that Math.round() will round that number to 3. So Option B is the
+              answer..
+          
+          </div>
+   
+        </div>
+
+    <div>
+        <h2>
+            <p class="myClass">Q2. Which of the following would compile without error?</p>
+        </h2>
+
+
+        <p class="green2">A. int a = Math.abs(-5);</p>
+        <p class="test2">B. int b = Math.abs(5.0);</p>
+        <p class="test2">C. int c = Math.abs(5.5F);</p>
+        <p class="test2">D. int d = Math.abs(5L);</p>
+
+        <button id="ans1">Show Answer</button>
+        <button id="reset2">Reset</button>
+    </div>
+
+    <div>
+        <h2>
+            <p class="myClass">Q3. Which statement is true given the following?<br><br>
+
+                Double d = Math.random();</p>
+        </h2>
+
+
+        <p class="test3">A. 0.0 < d <=1.0</p>
+                <p class="green3">B. 0.0 <= d < 1.0</p>
+                        <p class="test3">C. Compilation fail</p>
+                        <p class="test3">D. Cannot say.</p>
+
+                        <button id="ans2">Show Answer</button>
+                        <button id="reset3">Reset</button>
+    </div>
+
+    <div>
+        <h2>
+            <p class="myClass">Q4.
+                Which of the following will produce an answer that is closest in value to a double, d, while not being
+                greater than d?</p>
+        </h2>
+
+
+        <p class="test4">A. (int)Math.min(d);</p>
+        <p class="test4">B. (int)Math.max(d);</p>
+        <p class="test4">C. (int)Math.abs(d);</p>
+        <p class="green4">D. (int)Math.floor(d);</p>
+
+        <button id="ans3">Show Answer</button>
+        <button id="reset4">Reset</button>
+    </div>
+
+    <div>
+        <h2>
+            <p class="myClass">Q5. How many String objects have been created? <br><br>
+                String x = new String("xyz");<br>
+                String y = "abc";<br>
+                x = x + y;</p>
+        </h2>
+
+
+        <p class="test5">A. 2</p>
+        <p class="test5">B. 3</p>
+        <p class="green5">C. 4</p>
+        <p class="test5">D. 5</p>
+
+        <button id="ans4">Show Answer</button>
+        <button id="reset5">Reset</button>
+    </div>
+
+</body>
+
+</html>

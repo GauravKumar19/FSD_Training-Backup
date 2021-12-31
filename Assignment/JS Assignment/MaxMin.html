@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function solution(arr1) {
+
+                // FOR SECOND MAXIMUM
+            var largest = 0;
+            var second = 0;
+
+           document.writeln("Array: "+arr1+"<br>");
+
+            for (var i = 0; i < arr1.length; i++) {
+
+                if (arr1[i] > largest) {
+
+                    second = largest;
+
+                    largest = arr1[i];
+                }
+
+                else if (arr1[i] > second) {
+
+                    second = arr1[i]
+
+                }
+            }
+
+            document.writeln("Second Largest Element of an array: " + second + "<br>");
+
+
+           //FOR SECOND MINIMAL
+            var smallest= arr1[0];
+            var a = arr1[0];
+            for (var i = 0; i < arr1.length; i++) {
+
+                if (arr1[i+1] < smallest) {
+
+                    a = smallest;
+
+                    smallest = arr1[i];
+                }
+
+                else if (arr1[i] <  a) {
+
+                    a = arr1[i]
+
+                }
+            }
+
+            document.writeln("Second smallest Element of an array: " + a);
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+       
+
+        solution([90, 80, 78, 66, 45, 30, 20, 21, 88, 89,100]);
+    </script>
+</body>
+
+</html>

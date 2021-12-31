@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question2</title>
+
+    <style>
+        table {
+
+            margin: 0 auto;
+
+            font-size: large;
+
+            border: 1px solid black;
+
+        }
+
+
+
+        h1 {
+
+            text-align: center;
+
+            color: #006600;
+
+            font-size: xx-large;
+
+            font-family: 'Gill Sans',
+
+                'Gill Sans MT', ' Calibri',
+
+                'Trebuchet MS', 'sans-serif';
+
+        }
+
+        td {
+
+            background-color: khaki;
+
+            border: 1px solid black;
+
+        }
+
+
+
+        th,
+
+        td {
+
+            font-weight: bold;
+
+            border: 1px solid black;
+
+            padding: 10px;
+
+            text-align: center;
+
+        }
+
+
+
+        td {
+
+            font-weight: lighter;
+
+        }
+    </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+
+        //fetch json data from open api
+
+        $.getJSON("result.json", function (Result) {
+
+            var bitdata = '';
+
+            //iterate in json array of Objects
+
+            $.each(Result, function (key, value) {
+
+                bitdata += '<tr>';
+
+                bitdata += '<td>' + value.Id + '</td>';
+
+                bitdata += '<td>' + value.Maker + '</td>';
+
+                bitdata += '<td> <img src="'+ value.img + '" height=100px width=100px></td>';
+
+                bitdata += '<td><a href="' + value.Url + '">clickhere</a></td>';
+
+                bitdata += '<td>' + value.Title + '</td>';
+
+                bitdata += '<td>' + value.Description + '</td>';
+
+                bitdata += '<td>' + value.Ratings + '</td>';
+
+                bitdata += '</tr>';
+
+            });
+
+            //inserting rows into table
+
+            $('#table').append(bitdata);
+
+        })
+
+    });
+
+</script>
+
+</head>
+
+<body>
+<div>
+
+    <h1>dotnet-presentations</h1>
+
+
+
+    <table id='table'>
+
+
+
+        <tr>
+
+            <th>Id</th>
+
+            <th>Maker</th>
+
+            <th>Image</th>
+
+            <th>Url</th>
+
+            <th>Title</th>
+
+            <th>Description</th>
+
+            <th>Ratings</th>
+
+        </tr>
+
+    </table>
+
+    <br>
+
+    <br>
+
+    <div align="center"><a href="https://github.com/dotnet-presentations/ContosoCrafts/blob/master/src/wwwroot/data/products.json">Data Sourced from github</a></div>
+
+</div>
+</body>
+
+</html>

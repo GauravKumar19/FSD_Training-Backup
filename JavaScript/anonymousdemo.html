@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS - Anonymous Function</title>
+</head>
+
+<body>
+    <h1>JavaScript Anonymous Functions</h1>
+    <script>
+        var hello = function () {
+            document.writeln('<br> I am anonymous Function')
+        };
+
+        hello();//invoke anonymous function
+
+
+        var mul = function (a, b) {
+            document.writeln('<br>Anonymous Function with Parameters');
+            document.writeln('<br>The Multipliation of 2 nos is : ' + (a * b));
+        };
+        mul(10, 2);
+
+        var sqr = function (a) {
+            document.writeln('<br> Anonymous Function with Return Parameters');
+            return a * a;
+        };
+        let result = sqr(10);
+        document.write('<br>The Square of a Number is :' + result);
+
+        //Passing anonymous function as Argument to another function
+
+        var nums = [2,3,4];
+
+        var doublenums = nums.map(function(n){return n*2});
+        document.write('<br>' +doublenums);
+
+        setTimeout(function(){alert('Hello after 2 second')},2000);
+        setTimeout(test(),2000)
+        function test()
+        {
+            alert('Thank You');
+        }
+
+        function getMyDesignation(desig)
+       {
+
+            return desig();
+       }
+       document.write("<br>"+getMyDesignation(function() { return "Iam a Trainee";}));
+    </script>
+
+</body>
+
+</html>
