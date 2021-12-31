@@ -1,0 +1,18 @@
+package com.coforge.training;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+
+
+@EnableEurekaClient
+@EnableZuulProxy//It will acts as a Zuul Service Proxy and will enable Features of API Gateway that Proxies Request to Different Microservices.
+@SpringBootApplication
+public class ZuulApiGatewayApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ZuulApiGatewayApplication.class, args);
+	}
+
+}

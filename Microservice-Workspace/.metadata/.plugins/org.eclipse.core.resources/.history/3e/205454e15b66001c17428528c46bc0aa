@@ -1,0 +1,12 @@
+package com.coforge.training.service;
+
+import java.util.List;
+
+import com.coforge.training.model.Product;
+
+public interface ProductService {
+
+	List<Product> findAllProduct();
+	Product saveNewProduct(Product product);
+	List<Product> findAllProductById(Long productId);
+}

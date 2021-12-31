@@ -1,0 +1,6 @@
+package com.coforge.training.service;
+
+@
+public interface CustomerService  {
+
+}

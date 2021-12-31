@@ -1,0 +1,17 @@
+package com.coforge.training.model;
+
+
+public class Product {
+
+	Long productId;
+	
+	String productName;
+	Double price;
+	
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+}

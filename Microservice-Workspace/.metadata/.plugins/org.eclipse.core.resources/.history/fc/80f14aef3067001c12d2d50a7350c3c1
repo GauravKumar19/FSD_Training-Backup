@@ -1,0 +1,46 @@
+package com.coforge.training.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.coforge.training.model.Product;
+
+@FeignClient(name="PRODUCT-SERVICE")
+public interface CustomerService  {
+	
+
+	//Get All Products
+	@GetMapping(value = "getAllProduct")
+	public List<Product> getProducts(){
+	}
+	
+	//Save Products
+	@PostMapping(value= "saveProduct")
+	public Product saveProduct(@RequestBody Product product){
+		
+	}
+	//Update Products
+	@PutMapping("updateProduct")
+	public Product updateProduct(@RequestBody Product product){
+		
+	}
+	
+	//Retreive Products By ID
+	@GetMapping("/{productId}")
+	public Optional<Product> getProductById(@PathVariable("productId") Long productId){
+		
+	}
+	
+	//Delete Products By Id
+	@GetMapping(value = "deleteProductById/{productId}")
+	public String deleteProductById(@PathVariable Long productId){
+	
+	}
+}

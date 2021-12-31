@@ -1,0 +1,53 @@
+package com.coforge.training.service;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.client.RestTemplate;
+
+import com.coforge.training.model.Product;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+
+@Service
+public class ProductService{
+	
+	@Autowired
+	private RestTemplate restTemplate;
+
+	@Bean
+	public RestTemplate restTemplate() {
+		return new  RestTemplate();
+		
+	}
+	@RequestMapping("customer/{id}")
+	@HystrixCommand(fallbackMethod= "CallProduct_data")
+	public Optional<Product> getOneProduct(@PathVariable Long id) {  {
+		
+		System.out.println("Getting Product Details: "+id);
+		
+		String response = restTemplate.getForObject("http://localhost:8765/product/{id}"
+						, HttpMethod.GET
+						, null
+						, new ParameterizedTypeReference<String>() {
+						}, id).getBody();
+				
+		System.out.println("Response Received as " + response + " - " + new Date());
+
+		return response;
+	}
+	
+	@SuppressWarnings("unused")
+	private String CallProduct_data(Long id) {
+		System.out.println("Candidate Service is down!!! fallback route enabled...");
+		return "CIRCUIT BREAKER ENABLED!!! No Response From Candidate Service at this moment. " +
+		" Service will be back shortly - " + new Date();
+	}
+}

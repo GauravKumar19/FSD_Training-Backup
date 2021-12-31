@@ -1,0 +1,7 @@
+package com.coforge.training;
+
+import com.netflix.zuul.IZuulFilter;
+
+public interface SimpleFilter extends IZuulFilter {
+
+}
