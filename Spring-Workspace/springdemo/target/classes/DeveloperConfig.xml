@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:p="http://www.springframework.org/schema/p"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<!-- Creating Bean/Object of student class -->
+<bean id="d1" class="com.coforge.training.springdemo.model.Developer">
+
+<!-- Invoke Setter Methods setName() of Employee Class -->
+<!-- Property Tag is Responsible for setter Injection -->
+<property name="empId" value="101"></property>
+<property name="empName" value="Gaurav"></property>
+
+<property name="tech">
+<!-- Adding a List -->
+	<list>
+		<value>Spring FrameWork</value>
+		<value>Hibernate</value>
+		<value>Angular</value>
+		<value>JQuery</value>
+		<value>HTML5 / CSS3</value>
+	</list>
+</property>
+
+</bean>
+
+</beans>
